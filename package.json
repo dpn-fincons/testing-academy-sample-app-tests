@@ -1,0 +1,15 @@
+{
+  "name": "cucumber-tests",
+  "version": "1.0.0",
+  "description": "Demo for cucumber and taiko",
+  "author": "Domenico Pio Novelli",
+  "devDependencies": {
+    "@cucumber/cucumber": "7.3.1",
+    "taiko": "1.2.7",
+    "ts-node": "9.1.1",
+    "typescript": "4.1.5"
+  },
+  "scripts": {
+    "test": "node node_modules/@cucumber/cucumber/bin/cucumber-js src/features/*.feature"
+  }
+}
