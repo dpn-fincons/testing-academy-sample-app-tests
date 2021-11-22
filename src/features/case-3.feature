@@ -4,7 +4,7 @@ Feature: Results
     Given Tester is authenticated
     And Tester is in Results Page
     Then The results are shown
-      | Description    | Value | Status        | Verified |
+      | Description    | Value | Status      | Verified |
       | Course Testing | 12.34 | Unqualified | Yes      |
       | Course Java    | 12.34 | Unqualified | Yes      |
       | Customers SBB  | 24.65 | Qualified   | Yes      |
@@ -24,7 +24,7 @@ Feature: Results
     And Tester is in Results Page
     When Tester filters the result by Description 'Travel'
     Then The results are shown
-      | Description | Value | Status        | Verified |
+      | Description | Value | Status      | Verified |
       | Travel 1    | 44.5  | New         | No       |
       | Travel 2    | 56.3  | Negotiation | No       |
       | Travel 3    | 52.34 | Renewal     | No       |
@@ -35,7 +35,7 @@ Feature: Results
     And Tester is in Results Page
     When Tester filters the result by Value '2.3'
     Then The results are shown
-      | Description    | Value | Status        | Verified |
+      | Description    | Value | Status      | Verified |
       | Course Testing | 12.34 | Unqualified | Yes      |
       | Course Java    | 12.34 | Unqualified | Yes      |
       | Travel 3       | 52.34 | Renewal     | No       |
@@ -45,9 +45,9 @@ Feature: Results
     And Tester is in Results Page
     When Tester filters the result by Status 'Proposal'
     Then The results are shown
-      | Description    | Value | Status        | Verified |
-      | Customer Sky   | 33.3  | Proposal    | No       |
-      | Travel 4       | 13.33 | Proposal    | No       |
+      | Description  | Value | Status   | Verified |
+      | Customer Sky | 33.3  | Proposal | No       |
+      | Travel 4     | 13.33 | Proposal | No       |
 
   Scenario: Filtered Results for Description and Value
     Given Tester is authenticated
@@ -55,8 +55,8 @@ Feature: Results
     When Tester fills the filter with Description as 'Travel'
     And Tester fills the filter with Value as '2.3'
     Then The results are shown
-      | Description    | Value | Status        | Verified |
-      | Travel 3       | 52.34 | Renewal     | No       |
+      | Description | Value | Status  | Verified |
+      | Travel 3    | 52.34 | Renewal | No       |
 
 #  Scenario Outline: Filtered Results
 #    Given User is authenticated

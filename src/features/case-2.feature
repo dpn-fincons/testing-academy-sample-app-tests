@@ -65,5 +65,11 @@ Feature: Sign up
     Then Error message is shown '<error>'
     Examples:
       | name     | username | password | repeat_password | error                                     |
-#      | Tester 2 | cucumber | dd       | dd              | Username cucumber already in use          |
+      | Tester 2 | cucumber | dd       | dd              | Username cucumber already in use          |
       | Visitor  | visitor  | dd       | dt              | Password and repeat password do not match |
+
+  # aggiunta durante la lezione
+  Scenario: Sign in during lesson
+    Given the user is not signed in
+    When the user signes up with name 'x', username 'y' and password 'z'
+    Then the user is signed up and signed it

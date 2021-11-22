@@ -1,7 +1,7 @@
-import { Given, Then, When } from '@cucumber/cucumber';
+import { Then, When } from '@cucumber/cucumber';
 import * as assert from 'assert';
-import { below, button, click, goto, text, textBox, write } from 'taiko';
-import {CONFIRM, HOST, PASSWORD, SIGN_IN, SIGN_OUT, USERNAME} from '../commons/constants';
+import { below, button, click, text, textBox, write } from 'taiko';
+import { CONFIRM, PASSWORD, SIGN_IN, SIGN_OUT, USERNAME } from '../commons/constants';
 
 const SIGNED_TESTER = 'Signed in as Tester';
 
@@ -24,7 +24,7 @@ const SIGNED_TESTER = 'Signed in as Tester';
 // );
 
 When('User fills username field with {string}',
-    async function (username: string) {
+    async (username: string) => {
         await write(username, textBox(below(USERNAME)));
     }
 );
@@ -55,13 +55,13 @@ When(/^User signs in with username '(.+)' and password '(.+)'$/,
 
 Then('"Signed in as Tester" is shown in the page',
     async function () {
-        await textExist(SIGNED_TESTER, true);
+        assert.equal(await text('Signed in as Tester').exists(), true);
     }
 );
 
 Then(/^'(.+)' button is available$/,
     async function (buttonText: string) {
-        await buttonExist(buttonText);
+        assert.ok(await button(buttonText).exists());
     }
 );
 
